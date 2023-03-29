@@ -29,11 +29,12 @@ let package = Package(
     ),
   ],
   dependencies: [
-    // TODO(ncooke3): Figure out versioning stratgey for binary Abseil releases.
     .package(
-      url: "https://github.com/google/abseil-cpp-binary.git", "0.20220623.0"..<"0.20220624.0"),
-    // TODO(ncooke3): Figure out versioning stratgey for binary BoringSSL releases.
-    .package(url: "https://github.com/google/boringssl-binary.git", "0.9.0"..<"0.10.0"),
+        url: "https://github.com/google/abseil-cpp-binary.git",
+        // TODO(ncooke3): Figure out versioning stratgey for binary Abseil releases.
+        // BEFORE: "0.20220623.0"..<"0.20220624.0"
+        .exact("10.8.0-rc.0")
+    )
   ],
   targets: [
     .target(
@@ -48,24 +49,30 @@ let package = Package(
       dependencies: [
         .target(name: "gRPC-Core"),
         .target(name: "gRPC-C++"),
+        .target(name: "BoringSSL-GRPC"),
         .product(name: "abseil", package: "abseil-cpp-binary"),
-        .product(name: "BoringSSL-GRPC", package: "boringssl-binary"),
       ],
       path: "gRPC-CXX-Wrapper"
     ),
     .binaryTarget(
       name: "gRPC-Core",
       // TODO(ncooke3): Update the `url` with the actual value.
-      url: "URL_TO_BINARY",
+      url: "https://github.com/google/grpc-binary/releases/download/10.8.0-rc.0/gRPC-Core.zip",
       // TODO(ncooke3): Update the `checksum` with the actual value.
-      checksum: "CHECKSUM"
+      checksum: "7135a5ff1a8c94b7edade3dcbfdcfaabf16435ecd32d4319bdff54c0403a6bbc"
     ),
     .binaryTarget(
       name: "gRPC-C++",
       // TODO(ncooke3): Update the `url` with the actual value.
-      url: "URL_TO_BINARY",
+      url: "https://github.com/google/grpc-binary/releases/download/10.8.0-rc.0/gRPC-C++.zip",
       // TODO(ncooke3): Update the `checksum` with the actual value.
-      checksum: "CHECKSUM"
+      checksum: "1bd71106e72d57209e3fd74c7998e1f09f235d4ed6455e135ea8885acd41955c"
     ),
+    .binaryTarget(
+        name: "BoringSSL-GRPC",
+        // TODO(ncooke3): Decide on versioning strategy for BoringSSL-gRPC.
+        url: "https://github.com/google/grpc-binary/releases/download/10.8.0-rc.0/BoringSSL-GRPC.zip",
+        checksum: "3ce9cc692877c8802c00edc8f6994a4a305f416634a62c38844c8b8809343ced"
+    )
   ]
 )
