@@ -33,7 +33,7 @@ let package = Package(
         url: "https://github.com/google/abseil-cpp-binary.git",
         // TODO(ncooke3): Figure out versioning stratgey for binary Abseil releases.
         // BEFORE: "0.20220623.0"..<"0.20220624.0"
-        .exact("10.8.0-rc.0")
+        .exact("10.8.0-rc.1")
     )
   ],
   targets: [
