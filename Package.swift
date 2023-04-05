@@ -31,9 +31,7 @@ let package = Package(
   dependencies: [
     .package(
         url: "https://github.com/google/abseil-cpp-binary.git",
-        // TODO(ncooke3): Figure out versioning stratgey for binary Abseil releases.
-        // BEFORE: "0.20220623.0"..<"0.20220624.0"
-        .exact("10.8.0-rc.1")
+        "1.2021110200.0" ..< "1.2021110300.0"
     )
   ],
   targets: [
@@ -56,23 +54,18 @@ let package = Package(
     ),
     .binaryTarget(
       name: "gRPC-Core",
-      // TODO(ncooke3): Update the `url` with the actual value.
-      url: "https://dl.google.com/firebase/ios/bin/grpc/1.44.0-grpc/gRPC-Core.zip",
-      // TODO(ncooke3): Update the `checksum` with the actual value.
-      checksum: "7135a5ff1a8c94b7edade3dcbfdcfaabf16435ecd32d4319bdff54c0403a6bbc"
+      url: "https://dl.google.com/firebase/ios/bin/grpc/1.44.0/gRPC-Core.zip",
+      checksum: "6c8ae417ea4caf6252c8c68ca7092cb11d12436501727a24a01a8371336c2bd0"
     ),
     .binaryTarget(
       name: "gRPC-C++",
-      // TODO(ncooke3): Update the `url` with the actual value.
-      url: "https://dl.google.com/firebase/ios/bin/grpc/1.44.0-grpc/gRPC-C++.zip",
-      // TODO(ncooke3): Update the `checksum` with the actual value.
-      checksum: "1bd71106e72d57209e3fd74c7998e1f09f235d4ed6455e135ea8885acd41955c"
+      url: "https://dl.google.com/firebase/ios/bin/grpc/1.44.0/gRPC-C++.zip",
+      checksum: "c1f167f54b4715d71b5e2c80476b7bf0b58cc8e21633a1f267df339e796d3cca"
     ),
     .binaryTarget(
         name: "BoringSSL-GRPC",
-        // TODO(ncooke3): Decide on versioning strategy for BoringSSL-gRPC.
-        url: "https://dl.google.com/firebase/ios/bin/grpc/1.44.0-grpc/BoringSSL-GRPC.zip",
-        checksum: "3ce9cc692877c8802c00edc8f6994a4a305f416634a62c38844c8b8809343ced"
+        url: "https://dl.google.com/firebase/ios/bin/grpc/1.44.0/BoringSSL-GRPC.zip",
+        checksum: "7ba45f311a17a8b613f96316595f395c76eb7439117f958eba3735caa55e0fd7"
     )
   ]
 )
