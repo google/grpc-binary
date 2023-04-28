@@ -31,7 +31,7 @@ let package = Package(
   dependencies: [
     .package(
         url: "https://github.com/google/abseil-cpp-binary.git",
-        "1.2021110200.0" ..< "1.2021110300.0"
+        "1.2022062300.0" ..< "1.2022062400.0"
     )
   ],
   targets: [
@@ -54,13 +54,13 @@ let package = Package(
     ),
     .binaryTarget(
       name: "gRPC-Core",
-      url: "https://dl.google.com/firebase/ios/bin/grpc/1.44.0/gRPC-Core.zip",
-      checksum: "6c8ae417ea4caf6252c8c68ca7092cb11d12436501727a24a01a8371336c2bd0"
+      url: "https://dl.google.com/firebase/ios/bin/grpc/1.50.1/gRPC-Core.zip",
+      checksum: "123817b8959295eeef6a55546b686de86b70c1fa70bc057f031f1a766c9f28a2"
     ),
     .binaryTarget(
       name: "gRPC-C++",
-      url: "https://dl.google.com/firebase/ios/bin/grpc/1.44.0/gRPC-C++.zip",
-      checksum: "c1f167f54b4715d71b5e2c80476b7bf0b58cc8e21633a1f267df339e796d3cca"
+      url: "https://dl.google.com/firebase/ios/bin/grpc/1.50.1/gRPC-C++.zip",
+      checksum: "8a13781181d55edcbd6d35218d2129bd13d2369d6c8a1a37ce4a277230e875dc"
     ),
     .binaryTarget(
         name: "BoringSSL-GRPC",
