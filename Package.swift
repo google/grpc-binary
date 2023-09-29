@@ -54,13 +54,13 @@ let package = Package(
     ),
     .binaryTarget(
       name: "gRPC-Core",
-      url: "https://dl.google.com/firebase/ios/bin/grpc/1.50.1/gRPC-Core.zip",
-      checksum: "123817b8959295eeef6a55546b686de86b70c1fa70bc057f031f1a766c9f28a2"
+      url: "https://dl.google.com/firebase/ios/bin/grpc/1.49.1/gRPC-Core.zip",
+      checksum: "cdb31491d57e6d92ac40c81bbb97a65d5f8e61a6d709125fd63c53c700a94d74"
     ),
     .binaryTarget(
       name: "gRPC-C++",
-      url: "https://dl.google.com/firebase/ios/bin/grpc/1.50.2/gRPC-C++.zip",
-      checksum: "a060d793084edd7942da6fb6bb30f9719bc5e340bf26005bb2cbf1a0a515ac2e"
+      url: "https://dl.google.com/firebase/ios/bin/grpc/1.49.1/gRPC-C++.zip",
+      checksum: "e4a746e5cabee5cc49773b2738ffed0324ad1649f2fb4c3f650370127503c9dc"
     ),
     .binaryTarget(
         name: "BoringSSL-GRPC",
