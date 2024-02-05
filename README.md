@@ -3,5 +3,5 @@
 This repo distributes the [gRPC](https://github.com/grpc/grpc) library as a
 binary (xcframework) via Swift Package Manager.
 
-> **Warning**
+> [!WARNING]
 > This repo is not supported as a direct dependency for non-Firebase usage.
