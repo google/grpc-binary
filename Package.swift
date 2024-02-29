@@ -29,11 +29,10 @@ let package = Package(
     ),
   ],
   dependencies: [
-//    .package(
-//        url: "https://github.com/google/abseil-cpp-binary.git",
-//        "1.2022062300.0" ..< "1.2022062400.0"
-//    )
-    .package(path: "/Users/nickcooke/Developer/abseil-cpp-binary")
+    .package(
+        url: "https://github.com/google/abseil-cpp-binary.git",
+        "1.2022062300.1" ..< "1.2022062400.0"
+    )
   ],
   targets: [
     .target(
