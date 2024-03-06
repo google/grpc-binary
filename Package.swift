@@ -21,51 +21,57 @@ let package = Package(
   products: [
     .library(
       name: "gRPC-Core",
-      targets: ["gRPC-Core"]
+      targets: ["grpcWrapper"]
     ),
     .library(
       name: "gRPC-C++",
-      targets: ["gRPC-CXX-Target"]
+      targets: ["grpcppWrapper"]
     ),
   ],
   dependencies: [
     .package(
         url: "https://github.com/google/abseil-cpp-binary.git",
-        "1.2022062300.0" ..< "1.2022062400.0"
+        "1.2022062300.1" ..< "1.2022062400.0"
     )
   ],
   targets: [
     .target(
-      name: "gRPC-CXX-Target",
-      dependencies: [
-        .target(name: "gRPC-CXX-Wrapper")
-      ],
-      path: "SwiftPM-PlatformExclude/gRPC-CXX-Target"
+      name: "grpcWrapper",
+      dependencies: ["grpc"],
+      path: "grpc-Wrapper",
+      resources: [.process("Resources/PrivacyInfo.xcprivacy")]
     ),
     .target(
-      name: "gRPC-CXX-Wrapper",
+      name: "opensslWrapper",
+      dependencies: ["openssl_grpc"],
+      path: "openssl-grpc-Wrapper",
+      resources: [.process("Resources/PrivacyInfo.xcprivacy")]
+    ),
+    .target(
+      name: "grpcppWrapper",
       dependencies: [
-        .target(name: "gRPC-Core"),
-        .target(name: "gRPC-C++"),
-        .target(name: "BoringSSL-GRPC"),
+        "grpcpp",
+        "grpcWrapper",
+        "opensslWrapper",
         .product(name: "abseil", package: "abseil-cpp-binary"),
       ],
-      path: "gRPC-CXX-Wrapper"
+      path: "grpcpp-Wrapper",
+      resources: [.process("Resources/PrivacyInfo.xcprivacy")]
     ),
     .binaryTarget(
-      name: "gRPC-Core",
-      url: "https://dl.google.com/firebase/ios/bin/grpc/1.49.1/gRPC-Core.zip",
-      checksum: "ac70d546ec00500ed62e353623f33f469738826c33c1711127c1ced7ba0a003e"
+      name: "grpc",
+      url: "https://dl.google.com/firebase/ios/bin/grpc/1.49.2/grpc.zip",
+      checksum: "99e4a17fd34677622ef2cd99bc742eb079b80219d476544619f6f1583845855e"
     ),
     .binaryTarget(
-      name: "gRPC-C++",
-      url: "https://dl.google.com/firebase/ios/bin/grpc/1.49.1/gRPC-C++.zip",
-      checksum: "7c7e3568804b96cef83184f897a1d11fea753818a6644c9704b3b14be44507e2"
+      name: "grpcpp",
+      url: "https://dl.google.com/firebase/ios/bin/grpc/1.49.2/grpcpp.zip",
+      checksum: "075ed90f7a09589c1d269b7638dd34e50691b13b203305acb82c6248c1c752e1"
     ),
     .binaryTarget(
-        name: "BoringSSL-GRPC",
-        url: "https://dl.google.com/firebase/ios/bin/grpc/1.44.0/BoringSSL-GRPC.zip",
-        checksum: "7ba45f311a17a8b613f96316595f395c76eb7439117f958eba3735caa55e0fd7"
+        name: "openssl_grpc",
+        url: "https://dl.google.com/firebase/ios/bin/grpc/1.49.2/openssl_grpc.zip",
+        checksum: "3cb1cf53fb11a82d5f7e9f90a49a0c976535e5c3a89884b86516939f5b3e0871"
     )
   ]
 )
