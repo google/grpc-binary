@@ -21,11 +21,11 @@ let package = Package(
   products: [
     .library(
       name: "gRPC-Core",
-      targets: ["grpc-Wrapper"]
+      targets: ["grpcWrapper"]
     ),
     .library(
       name: "gRPC-C++",
-      targets: ["grpcpp-Wrapper"]
+      targets: ["grpcppWrapper"]
     ),
   ],
   dependencies: [
@@ -36,23 +36,23 @@ let package = Package(
   ],
   targets: [
     .target(
-      name: "grpc-Wrapper",
+      name: "grpcWrapper",
       dependencies: ["grpc"],
       path: "grpc-Wrapper",
       resources: [.process("Resources/PrivacyInfo.xcprivacy")]
     ),
     .target(
-      name: "openssl-grpc-Wrapper",
+      name: "opensslWrapper",
       dependencies: ["openssl_grpc"],
       path: "openssl-grpc-Wrapper",
       resources: [.process("Resources/PrivacyInfo.xcprivacy")]
     ),
     .target(
-      name: "grpcpp-Wrapper",
+      name: "grpcppWrapper",
       dependencies: [
         "grpcpp",
-        "grpc-Wrapper",
-        "openssl-grpc-Wrapper",
+        "grpcWrapper",
+        "opensslWrapper",
         .product(name: "abseil", package: "abseil-cpp-binary"),
       ],
       path: "grpcpp-Wrapper",
