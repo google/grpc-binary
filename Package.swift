@@ -31,7 +31,7 @@ let package = Package(
   dependencies: [
     .package(
         url: "https://github.com/google/abseil-cpp-binary.git",
-        branch: "ncooke3-patch-2",
+        branch: "ncooke3-patch-2"
         // "1.2024011601.1" ..< "1.2024011700.0"
     )
   ],
