@@ -31,8 +31,7 @@ let package = Package(
   dependencies: [
     .package(
         url: "https://github.com/google/abseil-cpp-binary.git",
-        branch: "nc/firestore-bin-m151"
-        // "1.2024011601.1" ..< "1.2024011700.0"
+        "1.2024011601.1" ..< "1.2024011700.0"
     )
   ],
   targets: [
