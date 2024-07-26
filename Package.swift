@@ -60,18 +60,18 @@ let package = Package(
     ),
     .binaryTarget(
       name: "grpc",
-      url: "https://dl.google.com/firebase/ios/bin/grpc/1.62.2/rc0/grpc.zip",
-      checksum: "033336c8811628d66186486f3c26934afdedd15f01b6079b6e98d1236b39ed31"
+      url: "https://dl.google.com/firebase/ios/bin/grpc/1.65.1/rc1/grpc.zip",
+      checksum: "c91f3cfeb4d51a3871c46d33a575bdf6ed2e83007390cc9007248cf987e5ac85"
     ),
     .binaryTarget(
       name: "grpcpp",
-      url: "https://dl.google.com/firebase/ios/bin/grpc/1.62.2/rc0/grpcpp.zip",
-      checksum: "99ad505db238c66d4173d01d9efa4bc14aee80a94c96a28c0a86c4ead2c467d2"
+      url: "https://dl.google.com/firebase/ios/bin/grpc/1.65.1/rc1/grpcpp.zip",
+      checksum: "795c9f19309e8d4e2a143aec6336ce58df388253f04fdcc0d059a55e2f0ec0d8"
     ),
     .binaryTarget(
         name: "openssl_grpc",
-        url: "https://dl.google.com/firebase/ios/bin/grpc/1.62.2/rc0/openssl_grpc.zip",
-        checksum: "4bced0ddb0c8866877c2ad95c106e4b0afbec6fce7c7bc5341a636f2e7ea4521"
+        url: "https://dl.google.com/firebase/ios/bin/grpc/1.65.1/rc1/openssl_grpc.zip",
+        checksum: "59f6b801c7ea99c5aff09ad9142972982f26548214707684d2f5f1500d4a4490"
     )
   ]
 )
