@@ -31,8 +31,7 @@ let package = Package(
   dependencies: [
     .package(
         url: "https://github.com/google/abseil-cpp-binary.git",
-        // "1.2025051202.0" ..< "1.2025051300.0"
-        revision: "c3374d429fd065c57b415537ff2144c9b95c3222"
+        "1.2025051202.0" ..< "1.2025051300.0"
     )
   ],
   targets: [
