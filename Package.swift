@@ -31,7 +31,7 @@ let package = Package(
   dependencies: [
     .package(
         url: "https://github.com/google/abseil-cpp-binary.git",
-        "1.2024072200.0" ..< "1.2024072300.0"
+        "1.2025051202.0" ..< "1.2025051300.0"
     )
   ],
   targets: [
@@ -60,18 +60,18 @@ let package = Package(
     ),
     .binaryTarget(
       name: "grpc",
-      url: "https://dl.google.com/firebase/ios/bin/grpc/1.69.1/rc0/grpc.zip",
-      checksum: "61bb6e29798cdc6898d7fcdf2d6a5e5191524dea4ece59d582329a1a56ebbfb3"
+      url: "https://dl.google.com/firebase/ios/bin/grpc/1.83.1/rc0/grpc.zip",
+      checksum: "1f9551447b6a7969364aa8e4b0bbd2e73ba3470d3a29f429d08c807cbd6bd25f"
     ),
     .binaryTarget(
       name: "grpcpp",
-      url: "https://dl.google.com/firebase/ios/bin/grpc/1.69.1/rc0/grpcpp.zip",
-      checksum: "c965a70fc06c1323d631d909168ba801fb783df964e3625ca922250dd625b197"
+      url: "https://dl.google.com/firebase/ios/bin/grpc/1.83.1/rc0/grpcpp.zip",
+      checksum: "777afb52397b3a2302e4d225346c2d3f7b11a352411ddadc440d0db3c59bf9dd"
     ),
     .binaryTarget(
-        name: "openssl_grpc",
-        url: "https://dl.google.com/firebase/ios/bin/grpc/1.69.1/rc0/openssl_grpc.zip",
-        checksum: "52494719d0dda77fa9a65c62207f22814c7799d522b4ae73d1244dbe61cf2b89"
+      name: "openssl_grpc",
+      url: "https://dl.google.com/firebase/ios/bin/grpc/1.83.1/rc0/openssl_grpc.zip",
+      checksum: "8d33c1998a0e5df87b761b636da8cac33315d3a38ba9a310a960e62a874cf2c9"
     )
   ]
 )
